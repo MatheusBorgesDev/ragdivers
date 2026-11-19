@@ -174,7 +174,7 @@ Projetos do Vitest, como no projeto 1:
 
 # Fase 0: Fundação, sem modelo
 
-### Tarefa 0.1: Repositório
+### Task 0.1: Repositório
 
 **Arquivos:**
 - Criar: `.gitignore`, `LICENSE`, `README.md`
@@ -203,7 +203,7 @@ git commit -m "chore: start the repository with the spec and the first plan"
   `gh repo create`. Antes, confirmar o nome e a visibilidade com o usuário. A URL dele vira o valor de
   `COMMUNITY_API_CONTACT`. O push só acontece quando o usuário pedir.
 
-### Tarefa 0.2: Next.js e ferramentas
+### Task 0.2: Next.js e ferramentas
 
 **Arquivos:**
 - Criar:
@@ -247,7 +247,7 @@ it('shows the subtitle and the non-affiliation notice', () => {
 git commit -m "feat: scaffold the Next.js app with lint, typecheck and tests"
 ```
 
-### Tarefa 0.3: Supabase local, primeira migração e CI
+### Task 0.3: Supabase local, primeira migração e CI
 
 **Arquivos:**
 - Criar:
@@ -320,7 +320,7 @@ it('rejects an unknown role and a label with spaces', /* both fail with code 235
 git commit -m "feat: add the invites table, server config and CI with database tests"
 ```
 
-### Tarefa 0.4: Cliente da API da comunidade
+### Task 0.4: Cliente da API da comunidade
 
 **Arquivos:**
 - Criar:
@@ -424,7 +424,7 @@ it('formats durations', () => {
 git commit -m "feat: add the community API client with cache, validation and a recorded snapshot"
 ```
 
-### Tarefa 0.5: Códigos de convite
+### Task 0.5: Códigos de convite
 
 **Arquivos:**
 - Criar:
@@ -482,7 +482,7 @@ it('shows "Código inválido." after a 401', /* InviteForm with mocked fetch */)
 git commit -m "feat: gate the app behind invite codes stored as hashes"
 ```
 
-### Tarefa 0.6: Deploy da fundação
+### Task 0.6: Deploy da fundação
 
 **Arquivos:**
 - Criar: `vercel.json` (`{ "regions": ["gru1"] }`)
@@ -521,7 +521,7 @@ git commit -m "chore: deploy the foundation to Vercel in gru1"
 
 # Fase 1: Estado da guerra ao vivo
 
-### Tarefa 1.1: Gateway do modelo, cassetes e preços
+### Task 1.1: Gateway do modelo, cassetes e preços
 
 **Arquivos:**
 - Criar: `src/server/llm/types.ts`, `anthropic.ts`, `cassette.ts`, `errors.ts` e `src/server/cost/prices.ts`
@@ -622,7 +622,7 @@ it('classifies provider errors', /* build the SDK's own error classes (check con
 git commit -m "feat: add the model gateway with recorded replays and per-call pricing"
 ```
 
-### Tarefa 1.2: Tool de guerra, prompt e loop do agente
+### Task 1.2: Tool de guerra, prompt e loop do agente
 
 **Arquivos:**
 - Criar: `src/server/agent/prompt.ts`, `tools.ts`, `answer.ts`, `history.ts`, `errors.ts` e `loop.ts`
@@ -747,7 +747,7 @@ it('drops a leading orphan left by retention', /* [u(tool_result), a, u3, a3], m
 git commit -m "feat: add the agent loop with get_war_status, limits and stop-reason handling"
 ```
 
-### Tarefa 1.3: Evals da categoria "ao vivo"
+### Task 1.3: Evals da categoria "ao vivo"
 
 **Arquivos:**
 - Criar:
@@ -863,7 +863,7 @@ it('validates every case file', /* every line of evals/cases/*.jsonl parses with
 git commit -m "feat: add live-category evals with code checks and recorded replays"
 ```
 
-### Tarefa 1.4: Primeira medição com o modelo de verdade
+### Task 1.4: Primeira medição com o modelo de verdade
 
 Usuário e Claude. Troca as estimativas hipotéticas pelos números medidos (SPEC, fase 1, primeiro item).
 
@@ -908,7 +908,7 @@ Usuário e Claude. Troca as estimativas hipotéticas pelos números medidos (SPE
 git commit -m "test: record the first live eval run and measure cost and time to first token"
 ```
 
-### Tarefa 1.5: Tracing e limites diários no banco
+### Task 1.5: Tracing e limites diários no banco
 
 **Arquivos:**
 - Criar:
@@ -998,7 +998,7 @@ it('round-trips tool_use and tool_result blocks', /* appendMessages then getConv
 git commit -m "feat: record traces per question and enforce daily limits that fail closed"
 ```
 
-### Tarefa 1.6: Rota de chat com streaming
+### Task 1.6: Rota de chat com streaming
 
 **Arquivos:**
 - Criar:
@@ -1073,7 +1073,7 @@ it('does not store messages when the run fails', /* gateway throws 402 → messa
 git commit -m "feat: stream agent events over NDJSON with tracing and limits"
 ```
 
-### Tarefa 1.7: Interface do chat
+### Task 1.7: Interface do chat
 
 **Arquivos:**
 - Criar, em `src/web/chat/`:
@@ -1156,7 +1156,7 @@ it('sends on Enter and adds a line on Shift+Enter')
 git commit -m "feat: add the chat screen with tool cards, sources, trace and every state"
 ```
 
-### Tarefa 1.8: Consentimento, expiração de 30 dias e visão do mantenedor
+### Task 1.8: Consentimento, expiração de 30 dias e visão do mantenedor
 
 **Arquivos:**
 - Criar:
@@ -1232,7 +1232,7 @@ it('writes a draft that is valid as a draft and invalid as a case', /* DraftCase
 git commit -m "feat: ask for consent, purge conversation text after 30 days and add the maintainer view"
 ```
 
-### Tarefa 1.9: Entrega aos amigos
+### Task 1.9: Entrega aos amigos
 
 **Arquivos:**
 - Criar:
