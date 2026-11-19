@@ -20,7 +20,8 @@
     "db:start": "supabase start -x gotrue,realtime,storage-api,imgproxy,kong,mailpit,postgrest,postgres-meta,studio,edge-runtime,logflare,vector,supavisor",
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
-    "war:snapshot": "tsx --env-file=.env.local scripts/war-snapshot.ts"
+    "war:snapshot": "tsx --env-file=.env.local scripts/war-snapshot.ts",
+    "invite:create": "tsx --env-file=.env.local scripts/invite-create.ts"
   },
   "dependencies": {
     "next": "16.4.6",
