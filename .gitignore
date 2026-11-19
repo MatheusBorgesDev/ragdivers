@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local environment: secrets never leave this machine
+.env*.local
+.env
+
+# Tooling state
+.vercel/
+supabase/.temp/
+.claude/context/
+.superpowers/
+
+# Wiki corpus downloaded by the ingestion (phase 3): CC BY-NC-SA content stays out of the repository
+corpus/
