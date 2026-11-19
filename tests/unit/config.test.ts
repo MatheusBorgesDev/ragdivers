@@ -14,3 +14,14 @@ it('accepts the repository URL', () => {
       .communityApiContact,
   ).toBe('https://github.com/owner/ragdivers')
 })
+
+it('treats an empty optional variable as absent', () => {
+  const config = loadServerConfig({
+    DATABASE_URL,
+    COMMUNITY_API_CONTACT: 'https://github.com/owner/ragdivers',
+    ANTHROPIC_API_KEY: '',
+    CRON_SECRET: '',
+  })
+  expect(config.anthropicApiKey).toBeUndefined()
+  expect(config.cronSecret).toBeUndefined()
+})

@@ -19,7 +19,8 @@
     "test:db": "vitest run --project db",
     "db:start": "supabase start -x gotrue,realtime,storage-api,imgproxy,kong,mailpit,postgrest,postgres-meta,studio,edge-runtime,logflare,vector,supavisor",
     "db:stop": "supabase stop",
-    "db:reset": "supabase db reset"
+    "db:reset": "supabase db reset",
+    "war:snapshot": "tsx --env-file=.env.local scripts/war-snapshot.ts"
   },
   "dependencies": {
     "next": "16.4.6",
@@ -42,6 +43,7 @@
     "oxlint": "1.94.0",
     "supabase": "3.2.0",
     "tailwindcss": "4.3.5",
+    "tsx": "4.23.15",
     "typescript": "7.0.2",
     "vitest": "5.1.1"
   }

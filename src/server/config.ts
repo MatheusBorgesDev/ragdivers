@@ -1,13 +1,16 @@
 import { z } from 'zod'
 
+// An empty line in .env.local (`ANTHROPIC_API_KEY=`) means "not set", not "set to nothing".
+const optional = <T extends z.ZodType>(type: T) => z.preprocess((value) => (value === '' ? undefined : value), type.optional())
+
 const schema = z.object({
   DATABASE_URL: z.url(),
   // Sent to the community API as X-Super-Contact. It identifies the project by its repository, never a person.
   COMMUNITY_API_CONTACT: z
     .url({ protocol: /^https$/ })
     .refine((value) => !value.includes('@'), 'COMMUNITY_API_CONTACT must be the repository URL, not an e-mail'),
-  ANTHROPIC_API_KEY: z.string().min(1).optional(),
-  CRON_SECRET: z.string().min(16).optional(),
+  ANTHROPIC_API_KEY: optional(z.string().min(1)),
+  CRON_SECRET: optional(z.string().min(16)),
 })
 
 export type ServerConfig = {
